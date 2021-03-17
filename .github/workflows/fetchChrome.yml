@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: vscode
+name: chrome
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ vscdoe ]
+    branches: [ chrome ]
   pull_request:
-    branches: [ vscode ]
+    branches: [ chrome ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,8 +34,8 @@ jobs:
         run: |
           echo http://ffmpeg.org/releases/ffmpeg-4.3.1.tar.xz          
           
-      - name: get vscode
+      - name: get chrome
         run: |
-          echo get vscode from https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
-          wget https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
+          echo get chrome from https://www.google.com/chrome/browser/thankyou.html?standalone=1&platform=win&installdataindex=defaultbrowser
+          wget https://www.google.com/chrome/browser/thankyou.html?standalone=1&platform=win&installdataindex=defaultbrowser
           echo ok done.
