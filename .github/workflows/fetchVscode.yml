@@ -22,12 +22,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: mkdir dir dist
+        run: |
+          mkdir -p ~/dist
       - uses: actions/checkout@v2
       - name: Cache dir
         uses: actions/cache@v2
         with:
-          path: ~/
-          key: ${{ runner.OS }}-${{ hashFiles('VSCode-win32-x64-1.53.2.zip') }}
+          path: ~/dist
+          key: ${{ runner.OS }}-${{ hashFiles('~/dist/VSCode-win32-x64-1.53.2.zip') }}
           # restore-keys: |
           #   ${{ runner.OS }}-VSCode-win32-x64
       # Runs a single command using the runners shell
@@ -40,4 +43,5 @@ jobs:
         run: |
           echo get vscode from https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
           wget https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
+          cp VSCode-win32-x64-1.53.2.zip ~/dist/
           echo ok done.
