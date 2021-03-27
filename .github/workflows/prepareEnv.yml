@@ -27,6 +27,20 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      
+      - name: Cache prepares env
+        id: cache-prepares-env
+        uses: actions/cache@v2
+        with:
+          path: ffmpeg-4.3.1.tar.xz
+          key: ${{ runner.os }}-ffmpeg-4.3.1
+
+      - name: Cache prepares env2
+        id: cache-prepares-env2
+        uses: actions/cache@v2
+        with:
+          path: VSCode-win32-x64-1.53.2.zip
+          key: ${{ runner.os }}-VSCode-win32-x64-1.53.2.zip
 
       # Runs a set of commands using the runners shell
       - name: Run get ffmpeg source
@@ -43,3 +57,4 @@ jobs:
           echo get vscode from https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
           wget https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/VSCode-win32-x64-1.53.2.zip
           echo ok done.
+      
