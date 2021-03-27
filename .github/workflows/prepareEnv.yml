@@ -35,7 +35,7 @@ jobs:
           wget http://ffmpeg.org/releases/ffmpeg-4.3.1.tar.xz
           tar xvf ffmpeg-4.3.1.tar.xz
           cd ffmpeg-4.3.1
-          ./configure make
+          ./configure && make
           cd ..
           
       - name: get vscode
